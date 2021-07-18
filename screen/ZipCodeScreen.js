@@ -34,11 +34,11 @@ export default function  ZipCodeScreen(){
     return(
         <View>
             <ImageBackground source={require('../sky2.jpg')} style={styles.backdrop}>
-            <FlatList
-                data = {availableZipItems}
-                keyExtractor = {item => item.code }
-                renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>} 
-                />
+                    <FlatList
+                        data = {availableZipItems}
+                        keyExtractor = {item => item.code }
+                        renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>} 
+                        />
             </ImageBackground>
         </View>
     )
@@ -49,13 +49,9 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
-    },
-    zipPlace: {
-        flex: 1,
-    },
-    zipCode: {
-        flex: 1,
+        alignItems: 'center',
+        backgroundColor: "#DDDDDD",
+        flex: 1
     },
     backdrop:{                      //เพิ่มพื้นหลังหน้าหลัก
         flexDirection: 'row',
@@ -65,7 +61,6 @@ const styles = StyleSheet.create({
         height:'100%',
     },
     btext:{
-        //fontFamily: "Cochin"
         fontSize: 30
-    }
+    },
 })

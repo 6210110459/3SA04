@@ -50,12 +50,12 @@ const styles = StyleSheet.create({
 
     },
     ttext:{
-        fontSize: 40 
+        fontSize: 40,
     },
     bblack:{
         justifyContent: 'center',           //center แนวแกนตั้ง
         alignItems: 'center',               //center แนวแกนนอน
-        backgroundColor: 'rgba(0,0,0,0.3)', //กำหนดพื้นหลังสีดำ
+        backgroundColor: 'rgba(0,0,0,0.1)', //กำหนดพื้นหลังสีดำ
         height:'50%',                       
         width:'100%'
     }
