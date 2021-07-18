@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { FlatList, StyleSheet, Text, View} from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
+import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -12,24 +13,29 @@ const availableZipItems = [
    ]
 
 const ZipItem = ({place, code, navigation}) => (
+    <View>
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', {zipCode: code})
     }}>
         <View style={styles.zipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+            <Text style={styles.btext}>{place}</Text>
+            <Text style={styles.btext}>{code}</Text>
         </View>
     </TouchableHighlight>
+    <Text> </Text>
+    </View>
 )
 export default function  ZipCodeScreen(){
     const navigation = useNavigation()
     return(
         <View>
+            <ImageBackground source={require('../sky2.jpg')} style={styles.backdrop}>
             <FlatList
                 data = {availableZipItems}
                 keyExtractor = {item => item.code }
                 renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>} 
                 />
+            </ImageBackground>
         </View>
     )
 }
@@ -46,5 +52,16 @@ const styles = StyleSheet.create({
     },
     zipCode: {
         flex: 1,
+    },
+    backdrop:{                      //เพิ่มพื้นหลังหน้าหลัก
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems: 'flex-start',
+        width: '100%',
+        height:'100%',
+    },
+    btext:{
+        //fontFamily: "Cochin"
+        fontSize: 30
     }
 })
