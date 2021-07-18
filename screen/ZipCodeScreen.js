@@ -38,16 +38,13 @@ const styles = StyleSheet.create({
     zipItem: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'flex-start'
     },
     zipPlace: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
     },
     zipCode: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
     }
 })
